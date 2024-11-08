@@ -5,14 +5,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>GFR - Text</title>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <style type="text/css">
     
         html{
 	  font-family: sans-serif;
 	}
+    @font-face {
+        font-family: "Adobe NotDef";
+        src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+    }
 	.box-title{
 	  width: 100%;
-	  float: left;
 	  font-size: 8pt;
 	  font-weight: 700;
 	  border-top: 1px solid black;
@@ -26,7 +30,6 @@
 	  float: left;
 	}
 	.box-text{
-		float: left;
 	}
 	
 	#nav{
@@ -35,19 +38,21 @@
 	  z-index: 100;
 	}
 	#font-toggle{
-	  display: block;
-	  font-weight: 700;
-	  cursor: pointer;
-	  -webkit-user-select: none; /* Safari */        
-	  -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* IE10+/Edge */
-	  user-select: none; /* Standard */
-	  text-align: center;
-	  color: white;
-	  background-color: black;
-	  width: 50px;
-	  display: block;
-	  padding: 10px;
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
 	}
 	.tooltip {
 	position: relative;
@@ -101,11 +106,11 @@
             .header {
             font-weight: bold;
             }
-            .attrib-old{
+            .attr-before{
                 color: red;
                 cursor: text;
             }
-            .attrib-new{
+            .attr-after{
                 color: green;
                 cursor: text;
             }
@@ -135,9 +140,13 @@
 			}
 
 	  
+
+	  
+
+	  
 	    @font-face{
-    src: url(old-NotoSansMendeKikakui-Regular.ttf);
-    font-family: "old Noto Sans Mende Kikakui";
+    src: url("NotoSansMendeKikakui-Regular.ttf");
+    font-family: "Noto Sans Mende Kikakui";
     font-weight: 400;
     
     font-style: normal;
@@ -145,45 +154,37 @@
 	  
 
 	  
-	    @font-face{
-    src: url(new-NotoSansMendeKikakui-Regular.ttf);
-    font-family: "new Noto Sans Mende Kikakui";
+
+	  
+
+	  
+	    .Regular{
+    font-family: "Noto Sans Mende Kikakui", "Adobe NotDef";
     font-weight: 400;
     
     font-style: normal;
+    font-variation-settings: "wght" 400;
 }
-	  
-
-	  
-
-	  
-	    .old-Noto-Sans-Mende-Kikakui-Regular{
-    font-family: "old Noto Sans Mende Kikakui";
-    font-weight: 400;
-    font-stretch: 100%;
-    font-style: normal;
-}
-	  
-
-	  
-	    .new-Noto-Sans-Mende-Kikakui-Regular{
-    font-family: "new Noto Sans Mende Kikakui";
-    font-weight: 400;
-    font-stretch: 100%;
-    font-style: normal;
-}
-	  
-
 	  
 	
+
+	   #ot-panel {
+		max-height: 400px;
+		overflow-y: scroll;
+		background: white;
+		padding: 10px;
+		display: none;
+	   }
     </style>
 </head>
 <body>
-    
     <div id="nav">
-        <div id="font-toggle">old</div>
-     </div>
-    
+		
+			<div class="nav-item" id="ot-button">OT features</div>
+			<div id="ot-panel">
+			</div>
+		
+	</div>
     <div id="content">
 	<h2>
 <b>Text</b>
@@ -191,8 +192,8 @@
 	
   
     <div class="box">
-      <div class="box-title">old-Noto-Sans-Mende-Kikakui-Regular 20pt</div>
-	<div class="box-text old-Noto-Sans-Mende-Kikakui-Regular" dir="auto" style="font-size: 20pt">𞡥𞠖𞢻𞠢 𞠮𞠣 𞢣𞠽 𞡅 𞡄 𞠺 𞡈 𞡗 𞢰𞠎 𞡔 𞡅𞠧 𞡥𞢻𞠤 𞡖𞠢 𞠄𞠦 𞠼𞣀 𞠕𞠣 𞠀𞠢𞡔 𞡨𞢯𞠸𞠣𞡪 𞡽𞠨𞠷 𞡛𞡇 𞠕𞡰𞡽 𞣄𞣄𞡪 𞡭𞠢</div>
+      <div class="box-title">Regular 20pt</div>
+	<div contenteditable=true spellcheck="false" class="box-text Regular" dir="auto" style="font-size: 20pt">𞡥𞠖𞢻𞠢 𞠮𞠣 𞢣𞠽 𞡅 𞡄 𞠺 𞡈 𞡗 𞢰𞠎 𞡔 𞡅𞠧 𞡥𞢻𞠤 𞡖𞠢 𞠄𞠦 𞠼𞣀 𞠕𞠣 𞠀𞠢𞡔 𞡨𞢯𞠸𞠣𞡪 𞡽𞠨𞠷 𞡛𞡇 𞠕𞡰𞡽 𞣄𞣄𞡪 𞡭𞠢</div>
     </div>
   
 
@@ -203,23 +204,27 @@
 	POSITION = "old"
 	fontToggle = document.getElementById("font-toggle")
 	function switchFonts() {
-	  items = document.getElementsByClassName("box");
-	  console.log("Click from "+POSITION)
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
 	  
-	  if (POSITION === "old") {
+	if (POSITION === "old") {
 	  POSITION = "new"
-	  for (item of items) {
-	    item.firstElementChild.textContent = item.firstElementChild.textContent.replace("old", "new")
-            item.lastElementChild.className = item.lastElementChild.className.replace("old", "new")
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
 	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
 	  }
 
 	  } else {
 	  POSITION = "old"
-	  for (item of items) {
-	    item.firstElementChild.textContent = item.firstElementChild.textContent.replace("new", "old")
-            item.lastElementChild.className = item.lastElementChild.className.replace("new", "old")
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
 	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
 	  }
 	}
 	}
@@ -227,17 +232,81 @@
 		fontToggle.addEventListener("click", switchFonts);
 	}
 
-    const divs = document.querySelectorAll('.node');
-    divs.forEach(el => el.addEventListener('click', event => {
-    var children = event.target.querySelectorAll(".node");
-    children.forEach(function(e) {
-        if (e.style.display === "none") {
-            e.style.display = "block";
-        } else {
-            e.style.display = "none";
-        }
-    })
-    }));
+// apply optional ot feats
+
+function buildFeatureList() {
+	var features = [
+		'aalt', 'c2sc', 'calt', 'case', 'cpsp', 'dlig', 'dnom',
+		'fina', 'frac', 'init', 'kern', 'liga', 'lnum', 'numr', 'onum',
+		'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'sups',
+		'swsh', 'titl', 'tnum', 'zero', 'ss01', 'ss02',
+		'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08',
+		'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14',
+		'ss15', 'ss16', 'ss17', 'ss18', 'ss19', 'ss20'
+	]
+	
+	var otPanel = document.getElementById("ot-panel")
+	for (i=0; i<features.length; i++) {
+		var feat = features[i]
+		
+		var row = document.createElement("div");
+
+		var item = document.createElement("input");
+		item.type = "checkbox"
+		item.value = feat
+		item.classList.add("ot-checkbox")
+		var label = document.createElement("label")
+		label.textContent = feat
+
+		row.appendChild(item)
+		row.appendChild(label)
+
+		otPanel.appendChild(row)
+	}
+}
+
+buildFeatureList()
+
+
+function enableFeatures() {
+	var checkboxes = document.getElementsByClassName("ot-checkbox")
+	var res = []
+	var disableKerning = false
+	for (i=0; i<checkboxes.length; i++) {
+		if (checkboxes[i].checked === true) {
+			var checkbox = checkboxes[i]
+			res.push('"' + checkbox.value + '"')
+
+			if (checkbox.value === "kern") {
+				disableKerning = true
+			}
+		}
+	}	
+
+	var boxText = document.getElementsByClassName("box-text")
+	var otString = res.join(", ")
+	for (j=0; j<boxText.length; j++) {
+		boxText[j].style.fontFeatureSettings = otString
+		if (disableKerning === true) {
+			boxText[j].style.fontKerning = "none"
+		}
+	}
+}
+
+var otButton = document.getElementById("ot-button")
+otButton.addEventListener("click", function() {
+    otPanel = document.getElementById("ot-panel")
+    if (otPanel.style.display !== "block") {
+        otPanel.style.display = "block"
+    } else {
+        otPanel.style.display = "none"
+    }
+})
+var checkboxes = document.getElementsByClassName("ot-checkbox")
+for (i=0; i<checkboxes.length; i++) {
+	cb = checkboxes[i]
+	cb.addEventListener("click", enableFeatures)
+}	
     
 	// break text so that no reflow happens
 async function breakText() {
